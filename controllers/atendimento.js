@@ -15,4 +15,19 @@ module.exports = app => {
         Atendimento.adiciona(atendimento, res)
         // res.send("POST atendimento!")
     })
+
+    app.patch('/atendimento/:id', (req, res) => {
+        const atendimento = req.body
+        const id = parseInt(req.params.id)
+
+        Atendimento.altera(id, atendimento, res)
+        // res.send("POST atendimento!")
+    })
+
+    app.delete('/atendimento/:id', (req, res) => {
+        const id = parseInt(req.params.id)
+
+        Atendimento.deleta(id, res)
+        // res.send("POST atendimento!")
+    })
 }
